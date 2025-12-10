@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Collision Warning System</title>
+  <title>Remote Trashcan</title>
+
 
   <!-- Prism.js syntax highlighting -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
@@ -12,9 +14,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
 
+
   <!-- Includes the stylesheet file styles.css -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 
 <body>
   <!-- Fixed Navigation Menu -->
@@ -35,7 +39,10 @@
   </nav>
 
 
+
+
   <h1 id="top">Collision Warning System</h1>
+
 
   <section id="information">
     <h2>Project Information</h2>
@@ -43,20 +50,22 @@
     <p><strong>Instructor:</strong> Ph.D. Ana Rodrigues</p>
     <p><strong>Team Members:</strong></p>
     <ul>
-      <li>...</li>
-      <li>...</li>
-      <li>...</li>
-      <li>...</li>
+      <li>Raffaele Iemma Garback</li>
+      <li>Kushal Ansal</li>
+      <li>Saugat Khadka</li>
+      <li>Gerardo Plantillas</li>
     </ul>
   </section>
+
 
   <section id="introduction">
     <h2>Introduction</h2>
     <p>This project uses an <strong>Arduino Uno</strong>, an <strong>HC-SR04 ultrasonic sensor</strong>, a
-      <strong>passive buzzer</strong>, and <strong>red/yellow/green LEDs</strong> to provide proximity-based
-      alerts, similar to automotive collision detection systems.
+      <strong>Photoresistor</strong>, and <strong>red/yellow/green LEDs</strong> to create a touchless trashcan,
+    which prevents potential contamination of the can and allows for easy disposal.
     </p>
   </section>
+
 
   <section id="circuit-diagram">
     <h2>Circuit Diagram</h2>
@@ -64,6 +73,7 @@
       thresholds.</p>
     <img src="collision-warning-system-Arduino.jpg" alt="Arduino collision warning system">
   </section>
+
 
   <section id="environment">
     <h2>Environmental Impact Assessment</h2>
@@ -78,6 +88,7 @@
     </ul>
   </section>
 
+
   <section id="bom">
     <h2>Bill of Materials (BoM)</h2>
     <table>
@@ -85,8 +96,8 @@
         <tr>
           <th>Item</th>
           <th>Qty</th>
-          <th>Unit Price</th>
-          <th>Subtotal</th>
+          <th>Unit Price (CAD)</th>
+          <th>Subtotal (CAD)</th>
           <th>Source</th>
         </tr>
       </thead>
@@ -94,8 +105,8 @@
         <tr>
           <td>Arduino Uno Rev3</td>
           <td>1</td>
-          <td>$27.60</td>
-          <td>$27.60</td>
+          <td>$20.00</td>
+          <td>$20.00</td>
           <td><a href="https://store-usa.arduino.cc/products/arduino-uno-rev3">Arduino Store</a></td>
         </tr>
         <tr>
@@ -106,38 +117,52 @@
           <td><a href="https://www.adafruit.com/product/3942">Adafruit</a></td>
         </tr>
         <tr>
-          <td>Passive Buzzer</td>
+          <td>USB cable</td>
           <td>1</td>
-          <td>$0.95</td>
-          <td>$0.95</td>
+          <td>$2.00</td>
+          <td>$2.00</td>
+          <td><a href="https://www.adafruit.com/product/3942">Adafruit</a></td>
+        </tr>
+        <tr>
+          <td>Photoresistor</td>
+          <td>1</td>
+          <td>$0.50</td>
+          <td>$0.50</td>
           <td><a href="https://www.sparkfun.com/passive-buzzer-module.html">SparkFun</a></td>
         </tr>
         <tr>
-          <td>LEDs (Red, Yellow, Green)</td>
-          <td>3</td>
+          <td>LED</td>
+          <td>1</td>
           <td>$0.20</td>
           <td>$0.60</td>
           <td>Adafruit</td>
         </tr>
         <tr>
-          <td>220 Ω Resistors</td>
-          <td>3</td>
-          <td>$0.03</td>
-          <td>$0.09</td>
+          <td>330 Ω Resistors</td>
+          <td>1</td>
+          <td>$0.50</td>
+          <td>$0.50</td>
           <td>Adafruit</td>
+        </tr>
+        <tr>
+          <td>1k Ω Resistor</td>
+          <td>1</td>
+          <td>$0.05</td>
+          <td>$0.05</td>
+          <td><a href="https://www.adafruit.com/product/3942">Adafruit</a></td>
         </tr>
         <tr>
           <td>Breadboard</td>
           <td>1</td>
-          <td>$4.95</td>
-          <td>$4.95</td>
+          <td>$5.00</td>
+          <td>$5.00</td>
           <td><a href="https://www.adafruit.com/product/64">Adafruit</a></td>
         </tr>
         <tr>
           <td>Jumper Wires</td>
           <td>1 set</td>
-          <td>$3.50</td>
-          <td>$3.50</td>
+          <td>$2.00</td>
+          <td>$2.00</td>
           <td><a href="https://www.sparkfun.com/jumper-wires-standard-7-m-m-30-awg-30-pack.html">SparkFun</a>
           </td>
         </tr>
@@ -145,12 +170,13 @@
       <tfoot>
         <tr>
           <td colspan="3">Estimated Total</td>
-          <td>$41.64</td>
+          <td>$34.00</td>
           <td>—</td>
         </tr>
       </tfoot>
     </table>
   </section>
+
 
   <section id="prototype">
     <h2>Prototype</h2>
@@ -158,173 +184,123 @@
     <img src="prototype.jpg" alt="Collision warning system prototype">
   </section>
 
+
   <section id="code">
     <h2>Arduino Code</h2>
-    <p>The following Arduino code controls the system, lighting LEDs and activating the buzzer based on distance
-      readings from the HC-SR04 sensor.</p>
+    <p>The following Arduino code controls the system, activating the motor by 
+      reading inputs from the sensor.</p>
+
 
     <pre class="line-numbers">
   <button class="copy-btn" onclick="copyCode()">Copy</button>
   <code id="arduinoCode" class="language-cpp">
 // Collision Warning System with Distance Sensor (HC-SR04)
-// Author: Ana Rodrigues
+// Author: Gerardo
 // Oct 2, 2025
 // Object is farther than 50cm: Green LED lights up
 // Object is closer than 50 cm, but more than 10cm away: Yellow LED lights, buzzer plays 300Hz tone
 // Object is closer than 10cm: Red LED lights up, buzzer plays 500Hz tone
 
-//LED pins
-const int greenLED = 2;
-const int yellowLED = 3;
-const int redLED = 4;
 
-// Ultrasonic sensor pins
-const int trigPin = 9;
-const int echoPin = 10;
 
-// Passive buzzer pin
-const int buzzer = 11;
+
+#include <Servo.h>
+
+// ----- Pins -----
+
+const int TrigPin = 9;
+
+const int EchoPin = 10;
+
+const int servoPin = 6;
+
+// ----- Objects -----
+
+Servo lidServo;
+
+// ----- Variables -----
+
+float distanceCM = 0;
 
 void setup() {
-  pinMode(greenLED, OUTPUT);
-  pinMode(yellowLED, OUTPUT);
-  pinMode(redLED, OUTPUT);
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-  Serial.begin(9600);
+
+pinMode(TrigPin, OUTPUT);
+
+pinMode(EchoPin, INPUT);
+
+lidServo.attach(servoPin);
+
+lidServo.write(0); // Lid starts closed
+
+Serial.begin(9600);
+
 }
 
 void loop() {
-  // Measure distance
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
 
-  long duration = pulseIn(echoPin, HIGH);
-  long distance = duration * 0.034 / 2;
+// ----- Read Distance -----
 
-  Serial.print("Distance: ");
-  Serial.print(distance);
-  Serial.println(" cm");
-  
-  //Error in measurement:
-  if (distance <= 0)
-    return;
+digitalWrite(TrigPin, LOW);
 
-  //Too close:
-  if (distance <= 10) {
-    digitalWrite(greenLED, LOW);
-    digitalWrite(yellowLED, LOW);
-    digitalWrite(redLED, HIGH);
-    tone(buzzer, 500); // Play 500Hz tone
-    return;
-  }
+delayMicroseconds(2);
 
-  //Midrange:
-  if (distance <= 30) {
-    digitalWrite(greenLED, LOW);
-    digitalWrite(yellowLED, HIGH);
-    digitalWrite(redLED, LOW);
-    tone(buzzer, 300); // Play 300Hz tone
-    return;
-  }
+digitalWrite(TrigPin, HIGH);
 
-  //Normal status:
-  digitalWrite(greenLED, HIGH);
-  digitalWrite(yellowLED, LOW);
-  digitalWrite(redLED, LOW);
-  noTone(buzzer); // stop buzzer
+delayMicroseconds(10);
 
-  delay(100);
+digitalWrite(TrigPin, LOW);
+
+distanceCM = pulseIn(EchoPin, HIGH) / 58.0;
+
+distanceCM = ((int)(distanceCM * 100.0)) / 100.0;
+
+Serial.print("Distance = ");
+
+Serial.print(distanceCM);
+
+Serial.println(" cm");
+
+// ----- Control Logic -----
+
+if (distanceCM > 0 && distanceCM <= 30) {
+
+Serial.println("Object detected — FAST opening.");
+
+// ---- FAST OPEN ----
+
+lidServo.write(90); // Snap open quickly
+
+delay(300); // Fast open speed
+
+// Stay open for 5 seconds
+
+delay(5000);
+
+Serial.println("Slow closing...");
+
+// ---- SLOW CLOSE ----
+
+for (int pos = 90; pos >= 0; pos--) {
+
+lidServo.write(pos);
+
+delay(25); // Slow animation (long close)
+
 }
-    </code></pre>
 
-    <script>
-      function copyCode() {
-        const code = document.getElementById('arduinoCode').innerText;
-        navigator.clipboard.writeText(code).then(() => {
-          alert('Code copied to clipboard!');
-        });
-      }
-    </script>
-  </section>
+Serial.println("Lid closed.");
+
+}
+
+delay(500);
+
+}
 
 
-
-  <section id="conclusion">
-    <h2>Conclusion</h2>
-    <p>The system effectively demonstrates distance-based alerting using Arduino. It’s affordable, educational, and
-      sustainable through reusable components.</p>
-  </section>
-
- <section id="references">
-  <h2>References</h2>
-  <p>
-    The following external resources and example projects demonstrate related Arduino applications 
-    using ultrasonic distance sensors, passive buzzers, and multicolour LEDs:
-  </p>
-
-  <ul>
-    <li>
-      Arduino Project Hub. (n.d.). 
-      <em>Ultrasonic sensor projects.</em> 
-      Arduino Project Hub. 
-      <a href="https://projecthub.arduino.cc/projects/tags/ultrasonic-sensor" target="_blank" rel="noopener noreferrer">
-        https://projecthub.arduino.cc/projects/tags/ultrasonic-sensor
-      </a>
-    </li>
-
-    <li>
-      Arduino Project Hub. (n.d.). 
-      <em>Buzzer projects.</em> 
-      Arduino Project Hub. 
-      <a href="https://create.arduino.cc/projecthub/projects/tags/buzzer" target="_blank" rel="noopener noreferrer">
-        https://create.arduino.cc/projecthub/projects/tags/buzzer
-      </a>
-    </li>
-
-    <li>
-      Arduino Project Hub. (n.d.). 
-      <em>LED projects.</em> 
-      Arduino Project Hub. 
-      <a href="https://projecthub.arduino.cc/projects/tags/led" target="_blank" rel="noopener noreferrer">
-        https://projecthub.arduino.cc/projects/tags/led
-      </a>
-    </li>
-
-    <li>
-      Instructables. (n.d.). 
-      <em>Distance measurement using ultrasonic sensor.</em> 
-      Instructables. 
-      <a href="https://www.instructables.com/Arduino-Distance-Measurement-Using-Ultrasonic-Senso/" target="_blank" rel="noopener noreferrer">
-        https://www.instructables.com/Arduino-Distance-Measurement-Using-Ultrasonic-Senso/
-      </a>
-    </li>
-
-    <li>
-      Circuit Basics. (n.d.). 
-      <em>How to use an ultrasonic sensor with Arduino.</em> 
-      Circuit Basics. 
-      <a href="https://www.circuitbasics.com/how-to-use-an-ultrasonic-sensor-with-arduino/" target="_blank" rel="noopener noreferrer">
-        https://www.circuitbasics.com/how-to-use-an-ultrasonic-sensor-with-arduino/
-      </a>
-    </li>
-
-    <li>
-      Last Minute Engineers. (n.d.). 
-      <em>Ultrasonic sensor tutorial.</em> 
-      Last Minute Engineers. 
-      <a href="https://lastminuteengineers.com/ultrasonic-sensor-arduino-tutorial/" target="_blank" rel="noopener noreferrer">
-        https://lastminuteengineers.com/ultrasonic-sensor-arduino-tutorial/
-      </a>
-    </li>
-  </ul>
-</section>
 
 
 
 </body>
+
 
 </html>
